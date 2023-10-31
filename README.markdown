@@ -56,15 +56,15 @@ $ qlot exec clackup app.lisp
 
 ## What Qlot is trying to solve
 
-We have Quicklisp, the central library registry. It made installation of libraries damn easy.
+We have Quicklisp, the central library registry. It made the installation of libraries damn easy.
 
-However, what only you can specify is the month of distribution. Which means you have to use all libraries of the same moment and you cannot use a newer/older version of a library for your project.
+However, what only you can specify is the month of distribution. This means you have to use all libraries of the same moment and you cannot use a newer/older version of a library for your project.
 
 "local-projects/" or ASDF configurations may be a solution to this problem, but there are a couple of problems.
 
 1) *They are not project-local.* If you have multiple projects that use different versions of the same library, it would be a problem.
 
-2) *They are difficult to fix the version or to update them.* If your project needs to work on other than your machine, for instance on other people's machines or on servers, the version of depending libraries should be the same.
+2) *They are difficult to fix the version or to update them.* If your project needs to work on other than your machine, for instance on other people's machines or on servers, the version of the depending libraries should be the same.
 
 This is what Qlot is trying to solve.
 
@@ -169,7 +169,7 @@ $ docker run --rm -it fukamachi/qlot
 
 ### ASDF configuration to prevent from loading by mistake
 
-ASDF loads any ASD files under a directory `~/common-lisp` including its subdirectories. It is easily understandable and convenient. However, it will lead to a problematic situation which ASDF accidentally loads libraries under ".qlot/" even in case you don't need it.
+ASDF loads any ASD files under a directory `~/common-lisp` including its subdirectories. It is easily understandable and convenient. However, it will lead to a problematic situation in which ASDF accidentally loads libraries under ".qlot/" even in case you don't need it.
 
 To avoid the situation, we recommend not to use `~/common-lisp` directory, or add the following lines to your Lisp's init file such as `~/.sbclrc` for SBCL.
 
@@ -253,7 +253,7 @@ $ qlot update mito sxql
 
 `qlot add` will add a line to `qlfile` and invoke `qlot install` internally. It replaces an existing line if a library with the same name already exists.
 
-Its arguments are same as the qlfile syntax.
+Its arguments are the same as the qlfile syntax.
 
 ```
 $ qlot add mito                                # ql mito
@@ -342,7 +342,7 @@ ultralisp <project name> <version>
 ultralisp <project name>
 ```
 
-`ultralisp` is same as `ql` except downloading from Ultralisp.
+`ultralisp` is same as `ql` except for downloading from Ultralisp.
 
 ### http
 
@@ -523,4 +523,4 @@ endfunction
 
 See [LICENSE.txt](LICENSE.txt).
 
-The license of bundled Quicklisp installer can be found at [quicklisp/LICENSE.txt](quicklisp/LICENSE.txt).
+The license of the bundled Quicklisp installer can be found at [quicklisp/LICENSE.txt](quicklisp/LICENSE.txt).
